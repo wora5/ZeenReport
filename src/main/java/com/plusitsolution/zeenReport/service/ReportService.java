@@ -100,7 +100,6 @@ public class ReportService {
 		Reader inputFile = new InputStreamReader(uploadfile.getInputStream());
 		/*Create csv and read the input file*/
 		return PlusCSVUtils.readCSV(headers, inputFile, true);
-
 	}
 	
 	public Map<String, Map<String, Integer>> identifyData(List<String[]> inputContent){

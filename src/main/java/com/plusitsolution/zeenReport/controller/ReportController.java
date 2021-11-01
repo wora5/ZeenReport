@@ -26,5 +26,11 @@ public class ReportController {
 		return ResponseEntity.status(HttpStatus.OK).header(HttpHeaders.CONTENT_TYPE, "text/csv; charset=UTF-8")
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.csv\"").body(reportService.getConvert(uploadfile));
 	}
+	
+	@RequestMapping(value = "/getConvert2", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseEntity<byte[]> getConvert2(@RequestParam("uploadCSV") MultipartFile uploadfile)  throws IOException{
+		return ResponseEntity.status(HttpStatus.OK).header(HttpHeaders.CONTENT_TYPE, "text/csv; charset=UTF-8")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.csv\"").body(reportService.getConvert(uploadfile));
+	}
 
 }
